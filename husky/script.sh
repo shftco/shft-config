@@ -30,8 +30,8 @@ fi
 
 cd ..
 
-if [ ! -f .commitlintrc.js ]; then
-  curl -o .commitlintrc.js https://raw.githubusercontent.com/shftco/shft-git-config/main/husky/.commitlintrc.js
+if [ ! -f .commitlintrc.json ]; then
+  curl -o .commitlintrc.json https://raw.githubusercontent.com/shftco/shft-git-config/main/husky/.commitlintrc.json
 fi
 
 if [ -f package.json ]; then
