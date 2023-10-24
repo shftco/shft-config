@@ -28,6 +28,8 @@ else
   check_husy_hooks
 fi
 
+cd ..
+
 if [ ! -f .commitlintrc.js ]; then
   curl -o .commitlintrc.js https://raw.githubusercontent.com/shftco/shft-git-config/main/husky/.commitlintrc.js
 fi
