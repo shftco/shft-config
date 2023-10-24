@@ -3,10 +3,12 @@
 function check_husy_hooks {
   if [ ! -f pre-push ]; then
     curl -o pre-push https://raw.githubusercontent.com/shftco/shft-git-config/main/husky/pre-push
+    chmod +x pre-push
   fi
 
   if [ ! -f commit-msg ]; then
     curl -o commit-msg https://raw.githubusercontent.com/shftco/shft-git-config/main/husky/commit-msg
+    chmod +x commit-msg
   fi
 }
 
