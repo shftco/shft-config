@@ -7,6 +7,7 @@ fi
 
 if ! which brew > /dev/null; then
   echo "You must install homebrew"
+  exit 1
 fi
 
 if ! which git-conventional-commits > /dev/null; then
