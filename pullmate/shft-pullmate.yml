@@ -1,0 +1,46 @@
+name: SHFT PullMate
+
+on:
+  pull_request:
+    types:
+      [
+        assigned,
+        unassigned,
+        labeled,
+        unlabeled,
+        opened,
+        edited,
+        closed,
+        reopened,
+        synchronize,
+        converted_to_draft,
+        ready_for_review,
+        locked,
+        unlocked,
+        review_requested,
+        review_request_removed,
+        auto_merge_enabled,
+        auto_merge_disabled,
+      ]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shft-pullmate:
+    name: SHFT PullMate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+      - name: SHFT PullMate
+        uses: shftco/shft-pullmate@v1.0.4
+        with:
+          reviewerRequired: true
+          assigneeRequired: true
+          checklistRequired: true
+          semanticTitleRequired: true
+          semanticBranchNameRequired: true
+          repoToken: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
