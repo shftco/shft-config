@@ -4,7 +4,7 @@
 
 - [ ] I have performed a self-review of my code (\*)
 - [ ] I have added thorough tests (\*)
-- [ ] I have runned rubocop and fixed all the issues (\*)
+- [ ] I have runned linter and fixed all issues (\*)
 - [ ] Does this task have an ID?
 - [ ] Should this task be tested by testers?
 - [ ] Any view/response updated?
