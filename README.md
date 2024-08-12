@@ -13,3 +13,6 @@ Go to the [instructions](pre-commit/README.md) for the pre-commit.
 
 ### husky
 Go to the [instructions](husky/README.md) for the husky.
+
+## Release
+Go to the [instructions](release/README.md) for the release.
