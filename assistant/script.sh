@@ -81,8 +81,8 @@ function install_git_release_script() {
     return
   fi
 
-  mkdir scripts
-  curl -s https://raw.githubusercontent.com/shftco/shft-git-config/main/release/script.sh > scripts/release.sh
+  mkdir -p scripts
+  curl -o scripts/release.sh https://raw.githubusercontent.com/shftco/shft-git-config/main/release/script.sh
   chmod +x scripts/release.sh
 
   if [ "$repo_type" == "backend" ]; then
@@ -90,7 +90,7 @@ function install_git_release_script() {
     content=".PHONY: release\nrelease:\n\tchmod +x ./scripts/release.sh && ./scripts/release.sh"
     echo -e $content > Makefile
   else
-    npm pkg set scripts.release "chmod +x ./scripts/release.sh && ./scripts/release.sh"
+    npm pkg set scripts.release="chmod +x ./scripts/release.sh && ./scripts/release.sh"
   fi
 }
 
@@ -144,7 +144,8 @@ function setup_branch_protection_rules() {
     fi 
   fi
 
-  curl -s https://raw.githubusercontent.com/shftco/shft-git-config/main/assistant/branch_protection.json > ~/.shft-assistant/branch_protection.json
+  mkdir -p ~/.shft-assistant
+  curl -o ~/.shft-assistant/branch_protection.json https://raw.githubusercontent.com/shftco/shft-git-config/main/assistant/branch_protection.json
 
   gh api -X PUT \
   -H "Accept: application/vnd.github.v3+json" \
