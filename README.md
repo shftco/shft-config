@@ -27,3 +27,7 @@ Go to the [instructions](release/README.md) for the release.
 ## Changelog
 
 Go to the [instructions](changelog/README.md) for the changelog.
+
+## Assistant
+
+Go to the [instructions](assistant/README.md) for the assistant.
